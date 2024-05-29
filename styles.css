@@ -491,16 +491,31 @@ main p:hover {
 
 
 .skills-container {
-  max-width: 850px;
+  max-width: 100%; /* Adjusted to fit the width of the viewport */
   margin-top: 30px;
-background-color: rgb(255, 255, 255);
-  border-radius: 3%;
+  background-color: rgb(255, 255, 255);
+  
   color: #ffffff;
-  padding: 30px; /* Add padding for space around the items */
-  display: flex; /* Use flexbox */
-  justify-content: space-evenly; /* Equal spacing between items */
-  flex-wrap: wrap; /* Allow items to wrap */
+  padding: 20px; /* Reduced padding for smaller screens */
+  display: flex;
+  justify-content: center; /* Center the items horizontally */
+  flex-wrap: wrap;
 }
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+  .skills-container {
+    padding: 15px; /* Further reduced padding for smaller screens */
+  }
+}
+
+/* Adjustments for very small screens */
+@media (max-width: 480px) {
+  .skills-container {
+    padding: 10px; /* Minimal padding for very small screens */
+  }
+}
+
 
 .skills-list {
   list-style: none;
@@ -553,34 +568,30 @@ background-color: rgb(255, 255, 255);
   }
 }
 
-/* Certificates Section */
-#certificates {
-  padding: 40px 20px;
-   
-  border-radius: 10px;
-  max-width: 800px;
-  width: 100%;
-  margin: 80px auto; /* Center the container horizontally */
-  display: flex;
-  justify-content: center;
-  align-items: center; /* Center vertically */
-  font-family: "Roboto Mono", monospace;
-  padding: 50px;
-
-}
-
 #certificates .container {
   max-width: 100%;
-  padding: 50px 50px; /* Add padding to the container */
-  margin: 10px;
+  padding: 20px; /* Adjusted padding for smaller screens */
+  margin: 10px; /* Adjusted margin for smaller screens */
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5); /* Add black shadow */
 }
 
+@media (min-width: 768px) {
+  #certificates .container {
+    padding: 50px; /* Original padding for larger screens */
+  }
+}
+
 #certificates h2 {
-  font-size: 32px;
+  font-size: 24px; /* Adjusted font size for smaller screens */
   color: #881567;
   text-align: center;
   margin-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+  #certificates h2 {
+    font-size: 32px; /* Original font size for larger screens */
+  }
 }
 
 .certificate-list {
@@ -588,6 +599,12 @@ background-color: rgb(255, 255, 255);
   padding: 0;
   margin: 0;
   cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .certificate-list {
+    font-size: 14px; /* Adjusted font size for smaller screens */
+  }
 }
 
 .certificate-list li {
@@ -598,6 +615,14 @@ background-color: rgb(255, 255, 255);
   transition: background-color 0.2s; /* Add transition for smooth hover effect */
   text-align: center;
 }
+
+@media (max-width: 600px) {
+  .certificate-list li {
+    font-size: 16px; /* Adjusted font size for smaller screens */
+    padding: 8px 0; /* Adjusted padding for smaller screens */
+  }
+}
+
 
 .certificate-list li:hover {
   background-color: #e6d3dc; /* Change background color on hover */
@@ -624,11 +649,19 @@ background-color: rgb(255, 255, 255);
 
 .grid {
   display: flex;
+  flex-wrap: wrap; /* Allow columns to wrap on smaller screens */
   justify-content: space-between; /* Ensure equal space between columns */
 }
 
 .column {
-  width: 45%; /* Adjust width of each column as needed */
+  width: 100%; /* Set width to 100% for full-width columns on smaller screens */
+}
+
+@media (min-width: 768px) {
+  .column {
+    width: calc(50% - 20px); /* Adjusted width for columns on larger screens */
+    margin-bottom: 20px; /* Add margin between columns */
+  }
 }
 
 .card {
@@ -636,12 +669,15 @@ background-color: rgb(255, 255, 255);
   border-radius: 10px;
   overflow: hidden;
   margin-bottom: 20px; /* Add margin between cards */
-  padding: 0px;
+  padding: 10px; /* Adjust padding for space inside the card */
+  box-sizing: border-box; /* Ensure padding is included in the width calculation */
+  width: 100%; /* Set width to 100% for responsiveness */
 }
 
 .card img {
-  width: 105%;
-  height: 200px; /* Set a fixed height for all images */
+  width: 100%; /* Set image width to 100% for responsiveness */
+  height: auto; /* Allow the height to adjust proportionally based on the image width */
+  max-height: 200px; /* Limit the maximum height to 200px */
   object-fit: cover; /* Ensure the image covers the entire space */
   cursor: pointer; /* Change cursor to pointer */
   transition: opacity 0.3s ease; /* Add transition for smooth opacity effect */
@@ -651,15 +687,15 @@ background-color: rgb(255, 255, 255);
   opacity: 0.8; /* Change opacity on hover */
 }
 
-
 .card-description {
   display: flex;
-  padding: 15px;
+  padding: 10px; /* Adjust padding for space inside the card description */
   flex-direction: column;
   align-items: center; /* Center items horizontally */
   text-align: center; /* Center text */
   transition: transform 0.8s ease, background-color 0.3s ease; /* Add transition for smooth effect */
 }
+
 
 .card:hover .card-description {
   background-color: #f6d6e844; /* Pink background on hover */
@@ -667,14 +703,14 @@ background-color: rgb(255, 255, 255);
 }
 
 .card-description h3 {
-  margin: 10;
+  margin: 10px;
   font-size: 20px;
 }
 
 .card-description p {
   margin-top: 10px;
- 
 }
+
 
 #projects h2 {
   font-size: 32px;
@@ -727,38 +763,38 @@ background-color: rgb(255, 255, 255);
 }
 
 #contact {
-  padding: 40px;
+  padding: 20px; /* Decrease padding for smaller screens */
   font-family: "Teachers", sans-serif;
   color: purple;
 }
 
 #contact h2 {
-  font-size: 24px;
+  font-size: 24px; /* Adjusted font size for smaller screens */
   color: #df1975;
   font-family: "Teachers", sans-serif;
 }
 
 #contact form {
-  max-width: 500px;
+  max-width: 100%; /* Set max-width to 100% for responsiveness */
   margin: 0 auto;
+  padding: 0 10px; /* Adjust padding for smaller screens */
 }
 
 #contact label {
   display: block;
   margin-bottom: 10px;
-  font-size: 18px;
+  font-size: 16px; /* Adjusted font size for smaller screens */
 }
 
 #contact input[type="text"],
 #contact input[type="email"],
 #contact textarea {
-  width: 100%;
+  width: calc(100% - 20px); /* Adjust input width to account for padding */
   padding: 10px;
-  font-size: 16px;
-  margin-bottom: 20px;
+  font-size: 14px; /* Adjusted font size for smaller screens */
+  margin-bottom: 15px; /* Decrease margin-bottom for smaller screens */
   font-family: "Teachers", sans-serif;
   color: #44203d;
-
 }
 
 #contact textarea {
@@ -767,7 +803,7 @@ background-color: rgb(255, 255, 255);
 
 #contact button {
   padding: 10px 20px;
-  font-size: 18px;
+  font-size: 16px; /* Adjusted font size for smaller screens */
   background-color: #da7399;
   color: #fff;
   border: none;
@@ -778,3 +814,4 @@ background-color: rgb(255, 255, 255);
 #contact button:hover {
   background-color: #c494b6;
 }
+
