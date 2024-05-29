@@ -1,0 +1,780 @@
+body {
+  font-family: "Ubuntu Sans", sans-serif;
+  background: #ffffff;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-gap: 64px;
+}
+
+.img-responsive-1,
+.img-responsive-2 {
+  width: 100%;
+  max-width: 60%; /* Smaller max width for larger screens */
+  display: block;
+  transition: all 0.3s ease; /* Smooth transitions */
+  cursor: pointer; /* Add cursor pointer */
+  margin-top: 30%;
+  margin-left: 30%;
+  text-align: center;
+  background-color: #7a3061;
+}
+
+.image-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow images to wrap on smaller screens */
+  gap: 10px; /* Adjust the gap between images */
+  justify-content: center; /* Center the images */
+}
+
+.img-responsive-1 {
+  border-radius: 10% 30% 40% 10%;
+}
+
+
+
+/* Hover effect */
+.img-responsive-1:hover,
+.img-responsive-2:hover {
+  opacity: 0.8; /* Reduce opacity on hover */
+  transform: scale(1.05); /* Slightly zoom in on hover */
+}
+
+/* Styles for small devices (mobile phones) */
+@media (max-width: 600px) {
+  .img-responsive-1,
+  .img-responsive-2 {
+    max-width: 90%; /* Make images larger on smaller screens */
+    margin: 0 auto; /* Center images */
+  }
+
+  .img-responsive-2 {
+    margin-top: 10px; /* Adjust margin for second image */
+  }
+}
+
+/* Styles for medium devices (tablets) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .img-responsive-1,
+  .img-responsive-2 {
+    max-width: 70%; /* Adjust max-width for tablets */
+  }
+}
+
+
+
+.grid-2-columns {
+  grid-template-columns: 1fr 1fr;
+}
+
+.grid-3-columns {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.grid-3-columns-with-first-narrow {
+  grid-template-columns: 1fr 2fr 2fr;
+}
+
+
+section {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 100px;
+}
+
+section.secondary {
+  background: #f8f8f8;
+}
+
+/* Header styles */
+header {
+  position: relative;
+  background-color: #dfcddc;
+  opacity: 0.8;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: rgb(180, 60, 116);
+  text-align: center;
+  padding: 40px 0 100px;
+  border-top: 20px;
+  
+
+  overflow: hidden; /* Ensure the waves are contained within the header */
+}
+
+
+
+/* Wave container */
+.wave-container {
+  position: absolute;
+  bottom: 100;
+  width: 100%;
+  text-align: center;
+  height: 100px;
+  overflow: hidden;
+}
+
+.waves {
+  position:relative;
+  width: 100%;
+  height: 150%;
+  bottom: -10px;
+  
+}
+
+.parallax > use {
+  animation: moveWaves 15s  infinite;
+}
+
+@keyframes moveWaves {
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
+  100% {
+    transform: translate3d(85px, 0, 0);
+  }
+}
+
+/* Other header elements styling remains unchanged */
+header h1 {
+  font-weight: 300;
+  font-size: 10px;
+  line-height: 1;
+  margin: 20px 0;
+  opacity: 0; /* Initially hidden for fade-in effect */
+  transform: translateY(20px); /* Initially shifted down for slide-in effect */
+  animation: fadeInSlideUp 3s ease-out forwards; /* Animation applied */
+  font-family: "Roboto Mono", monospace;
+  cursor: pointer;
+  
+}
+
+/* Define hover effect */
+header h1:hover {
+  color: #901085; /* Change color on hover */
+  
+}
+
+
+
+@keyframes fadeInSlideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 48px;
+    margin: 20px 0;
+    animation-duration: 1.5s; /* Longer animation duration for smaller screens */
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  header h1 {
+    font-size: 72px;
+    margin: 25px 0;
+    animation-duration: 1.2s; /* Medium animation duration for tablets */
+  }
+}
+
+@media (min-width: 1025px) {
+  header h1 {
+    font-size: 96px;
+    margin: 30px 0;
+    animation-duration: 1s; /* Default animation duration for desktops */
+  }
+}
+
+header h2 {
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 1.5;
+  margin: 0;
+  color: rgb(147, 121, 146);
+  font-family: "Roboto Mono", monospace;
+}
+
+#typing {
+  border-right: 2px solid;
+  display: inline-block;
+  animation: blink 0.7s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+header h3 {
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 1.5;
+  letter-spacing: 5px;
+  margin: 0;
+  cursor: pointer;
+}
+
+/* Style for the fixed "Home" button */
+.home-button {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  padding: 10px 20px;
+  background-color: #975e8d; /* Adjust button background color */
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 5px;
+  z-index: 999; /* Ensure it's above other content */
+  transition: background-color 0.3s;
+}
+
+/* Add hover effect */
+.home-button:hover {
+  background-color: #c83d97; /* Change background color on hover */
+  color: white;
+}
+
+
+header a {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: center;
+  color: #833d76;
+  padding: 16px 32px;
+  margin-top: 32px;
+  display: inline-block;
+  letter-spacing: 3px;
+  text-decoration: none;
+  text-transform: uppercase;
+  background: white;
+  cursor: pointer;
+  transition: transform 0.3s, color 0.3s; /* Add transition for smooth effect */
+}
+
+/* Add hover effect */
+header a:hover {
+  transform: scale(1.01); /* Zoom effect on hover */
+  color: #c83d97; /* Change text color on hover */
+}
+
+
+/* Reset CSS */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+}
+
+
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Grid */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 30px;
+}
+
+.grid-2-columns {
+  justify-content: space-between;
+}
+
+.image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.img-responsive-1,
+.img-responsive-2 {
+  width: 100%;
+  max-width: 60%; 
+  display: block;
+  transition: all 0.3s ease; 
+  cursor: pointer;
+  margin: 15px 0; 
+  text-align: center;
+  background-color: #7a3061;
+}
+
+.img-responsive-1 {
+  border-radius: 10% 30% 40% 10%;
+}
+
+.img-responsive-2 {
+  border-radius: 40% 10% 30% 10%;
+}
+
+/* Hover effect */
+.img-responsive-1:hover,
+.img-responsive-2:hover {
+  opacity: 0.8; 
+  transform: scale(1.05); 
+}
+
+/* Styles for small devices (mobile phones) */
+@media (max-width: 600px) {
+  .img-responsive-1,
+  .img-responsive-2 {
+    max-width: 90%; 
+    margin: 10px auto; 
+  }
+}
+
+/* Styles for medium devices (tablets) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .img-responsive-1,
+  .img-responsive-2 {
+    max-width: 70%; 
+  }
+}
+
+/* Content Section */
+.grid-2-columns > div {
+  flex: 1;
+  padding: 10px;
+}
+
+.grid-2-columns h2,
+.grid-2-columns h3,
+.grid-2-columns p {
+  margin-bottom: 20px;
+}
+
+.grid-2-columns h2 {
+  font-size: 24px;
+  color: #c3439f;
+}
+
+.grid-2-columns h3 {
+  margin-top: 20px;
+  font-size: 20px;
+  color: #7f3774;
+  letter-spacing: 5px;
+}
+
+.grid-2-columns p {
+  font-size: 16px;
+  color: #44203d;
+  line-height: 1.8;
+}
+
+main {
+  background-color: white;
+}
+
+main h2 {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+  letter-spacing: 5px;
+  color: #9e5a8d;
+  opacity: 0.3;
+  text-transform: uppercase;
+}
+
+main h3 {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 1.5;
+  color: #c83d97;
+  margin: 20;
+  font-family: "Roboto Mono", monospace;
+  cursor: pointer;
+}
+
+main h4 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1;
+  color: #272044;
+  margin: 0;
+}
+
+main h5 {
+  font-weight: 700;
+  font-size: 13px;
+  margin: 0;
+  line-height: 1;
+  color: #272044;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.7;
+  }
+}
+
+main p {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #44203d;
+  opacity: 0.7;
+  animation: fadeIn 1s ease; /* Apply fadeIn animation */
+  text-align: justify;
+  transition: transform 0.8s ease, background-color 0.3s ease; /* Add transition for smooth effect */
+  cursor: pointer;
+}
+
+main p:hover {
+  background-color: #f6d6e844; /* Pink background on hover */
+  transform: scale(1.02); /* Slight zoom on hover */
+}
+
+
+
+.skills-container {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: black;
+  color: #ffffff;
+  padding: 20px; /* Add padding for space around the items */
+  display: grid; /* Use grid layout */
+  grid-gap: 20px; /* Add gap between grid items */
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5); /* Add black shadow */
+}
+
+
+
+
+.skill-text {
+  margin-top: 20px;
+  font-size: 30px;
+  font-weight: 700;
+  padding-top: 5px; /* Add padding top */
+  font-family: "Ubuntu Sans", sans-serif;
+  color: #7a3061;
+  cursor: pointer;
+  transition: color 0.6s, transform 0.3s; /* Add transition for color change and zoom out effect */
+}
+
+.skill-text:hover {
+  color: #ff69b4; /* Change color to pink on hover */
+  transform: scale(0.5); /* Zoom out effect on hover */
+}
+
+
+.skills-container {
+  max-width: 850px;
+  margin-top: 30px;
+background-color: rgb(255, 255, 255);
+  border-radius: 3%;
+  color: #ffffff;
+  padding: 30px; /* Add padding for space around the items */
+  display: flex; /* Use flexbox */
+  justify-content: space-evenly; /* Equal spacing between items */
+  flex-wrap: wrap; /* Allow items to wrap */
+}
+
+.skills-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+}
+
+.skills-list li {
+  margin-top: 10px;
+  text-align: center; /* Center text */
+  display: inline-block;
+  
+  align-items: center; /* Center items horizontally */
+  padding: 20px;
+}
+
+.animated-icon {
+  font-size: 40px; /* Increase icon size */
+  animation: colorChange 2s infinite alternate; /* Apply animation */
+  transition: transform 0.3s; /* Add transition for smooth zoom effect */
+  cursor: pointer;
+}
+
+.animated-icon:hover {
+  transform: scale(1.3); 
+}
+
+@keyframes colorChange {
+  0% {
+    color: #e691d2; /* Start color */
+  }
+  100% {
+    color: #a857df; /* End color */
+  }
+}
+
+.skill-text {
+  font-size: 10px; 
+  padding: 10px;
+  margin: 10px;
+}
+
+@keyframes colorChange {
+  0% {
+    color: #e691d2; /* Start color */
+  }
+  100% {
+    color: #a857df; /* End color */
+  }
+}
+
+/* Certificates Section */
+#certificates {
+  padding: 40px 20px;
+   
+  border-radius: 10px;
+  max-width: 800px;
+  width: 100%;
+  margin: 80px auto; /* Center the container horizontally */
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center vertically */
+  font-family: "Roboto Mono", monospace;
+  padding: 50px;
+
+}
+
+#certificates .container {
+  max-width: 100%;
+  padding: 50px 50px; /* Add padding to the container */
+  margin: 10px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5); /* Add black shadow */
+}
+
+#certificates h2 {
+  font-size: 32px;
+  color: #881567;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.certificate-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.certificate-list li {
+  font-size: 18px;
+  color: #605e5f;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+  transition: background-color 0.2s; /* Add transition for smooth hover effect */
+  text-align: center;
+}
+
+.certificate-list li:hover {
+  background-color: #e6d3dc; /* Change background color on hover */
+}
+
+
+.certificate-list li:last-child {
+  border-bottom: none;
+}
+
+@media (max-width: 600px) {
+  #certificates {
+    padding: 20px 10px;
+  }
+
+  #certificates h2 {
+    font-size: 28px;
+  }
+
+  .certificate-list li {
+    font-size: 16px;
+  }
+}
+
+.grid {
+  display: flex;
+  justify-content: space-between; /* Ensure equal space between columns */
+}
+
+.column {
+  width: 45%; /* Adjust width of each column as needed */
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px; /* Add margin between cards */
+  padding: 0px;
+}
+
+.card img {
+  width: 105%;
+  height: 200px; /* Set a fixed height for all images */
+  object-fit: cover; /* Ensure the image covers the entire space */
+  cursor: pointer; /* Change cursor to pointer */
+  transition: opacity 0.3s ease; /* Add transition for smooth opacity effect */
+}
+
+.card img:hover {
+  opacity: 0.8; /* Change opacity on hover */
+}
+
+
+.card-description {
+  display: flex;
+  padding: 15px;
+  flex-direction: column;
+  align-items: center; /* Center items horizontally */
+  text-align: center; /* Center text */
+  transition: transform 0.8s ease, background-color 0.3s ease; /* Add transition for smooth effect */
+}
+
+.card:hover .card-description {
+  background-color: #f6d6e844; /* Pink background on hover */
+  transform: scale(0.9); /* Slight zoom on hover */
+}
+
+.card-description h3 {
+  margin: 10;
+  font-size: 20px;
+}
+
+.card-description p {
+  margin-top: 10px;
+ 
+}
+
+#projects h2 {
+  font-size: 32px;
+  color: #881567;
+ 
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #d6a3cd;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  margin-top: 20px; /* Add margin to separate from other content */
+  margin-bottom: 24px;
+}
+
+.btn:hover {
+  background-color: #a15786bc;
+}
+
+#projects h2 {
+  font-size: 32px;
+  color: #881567;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Footer styles */
+.footer {
+  background-color: #e1c6d8bb;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-icons {
+  font-size: 30px;
+}
+
+.footer-icons a {
+  color: #d85ea8;
+  margin: 0 10px; /* Adjust margin between icons */
+  background-color: transparent; /* Set background color to transparent */
+  padding: 5px; /* Add padding to the icons */
+  border-radius: 50%; /* Make the icons circular */
+  font-size: 40px;
+}
+
+#contact {
+  padding: 40px;
+  font-family: "Teachers", sans-serif;
+  color: purple;
+}
+
+#contact h2 {
+  font-size: 24px;
+  color: #df1975;
+  font-family: "Teachers", sans-serif;
+}
+
+#contact form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+#contact label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+#contact input[type="text"],
+#contact input[type="email"],
+#contact textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  font-family: "Teachers", sans-serif;
+  color: #44203d;
+
+}
+
+#contact textarea {
+  resize: vertical;
+}
+
+#contact button {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #da7399;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-family: "Teachers", sans-serif;
+}
+
+#contact button:hover {
+  background-color: #c494b6;
+}
