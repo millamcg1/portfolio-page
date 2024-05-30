@@ -1,12 +1,117 @@
 body {
   font-family: "Ubuntu Sans", sans-serif;
   background: #ffffff;
+  padding: 20px; /* Add padding to the entire body */
 }
 
-.container {
-  max-width: 1400px;
-  margin: 0 auto;
+/* About Me Section */
+#aboutme {
+  padding: 50px 0; /* Add padding to the top and bottom of the section */
 }
+
+#aboutme h2 {
+  font-weight: bold; /* Set font weight */
+  font-size: 24px; /* Set font size */
+  margin-bottom: 20px; /* Add margin at the bottom */
+  text-align: center; /* Center align the text */
+  color: #881567; /* Set the text color */
+}
+
+#aboutme h3 {
+  font-weight: normal; /* Set font weight */
+  font-size: 20px; /* Set font size */
+  margin-top: 20px; /* Add margin at the top */
+  margin-bottom: 20px; /* Add margin at the bottom */
+  text-align: center; /* Center align the text */
+  color: #7f3774; /* Set the text color */
+  letter-spacing: 5px; /* Add letter spacing */
+}
+
+#aboutme p {
+  font-size: 16px; /* Set font size */
+  color: #44203d; /* Set text color */
+  line-height: 1.8; /* Set line height */
+}
+
+
+ h2, h3 {
+      text-align: center;
+      color: #881567;
+      margin: 20px;
+    }
+
+    h2 {
+      font-size: 32px; /* Same font size for h2 across all sections */
+      margin-bottom: 30px;
+    }
+
+    h3 {
+      font-size: 24px; /* Same font size for h3 across all sections */
+      margin-bottom: 20px;
+    }
+
+
+.certificate-list {
+  padding: 10;
+  margin: 20px;
+  list-style-type: none;
+  text-align: center;
+}
+
+.certificate-list li {
+  padding: 10px;
+  text-align: center;
+  transition: background-color 0.2s, border-color 0.2s;
+  border: 2px solid transparent;
+}
+
+.certificate-list li:hover {
+  background-color: #e6d3dc; /* Change background color on hover */
+  border-color: #e6d3dc; /* Change border color on hover */
+  padding: 10px;
+}
+
+
+.skills-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.skills-list li {
+  padding: 10px 0;
+  text-align: center;
+  transition: background-color 0.2s;
+}
+
+.skills-list li:hover {
+  background-color: #e6d3dc; /* Change background color on hover */
+}
+
+.animated-icon {
+  margin-right: 10px;
+}
+
+@media (max-width: 600px) {
+  h2 {
+    font-size: 28px; /* Adjust font size for smaller screens */
+  }
+
+  h3 {
+    font-size: 20px; /* Adjust font size for smaller screens */
+  }
+
+  .skills-list li,
+  .certificate-list li {
+    font-size: 16px; /* Adjust font size for smaller screens */
+    padding: 8px 0; /* Adjust padding for smaller screens */
+  }
+}
+
+
+    .card-body p {
+      font-size: 14px;
+    }
+
 
 .text-center {
   text-align: center;
@@ -457,8 +562,6 @@ main p:hover {
   transform: scale(1.02); /* Slight zoom on hover */
 }
 
-
-
 .skills-container {
   max-width: 600px;
   margin: 0 auto;
@@ -469,9 +572,6 @@ main p:hover {
   grid-gap: 20px; /* Add gap between grid items */
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5); /* Add black shadow */
 }
-
-
-
 
 .skill-text {
   margin-top: 20px;
@@ -569,178 +669,158 @@ main p:hover {
 }
 
 #certificates .container {
-  max-width: 100%;
-  padding: 20px; /* Adjusted padding for smaller screens */
-  margin: 10px; /* Adjusted margin for smaller screens */
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5); /* Add black shadow */
+      max-width: 100%;
+      padding: 15px; /* Adjusted padding for smaller screens */
+      margin: 15px; /* Adjusted margin for smaller screens */
+      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5); /* Add black shadow */
+    }
+
+    @media (min-width: 768px) {
+      #certificates .container {
+        padding: 40px; /* Original padding for larger screens */
+      }
+    }
+
+
+    .certificate-list {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      cursor: pointer;
+    }
+
+    @media (max-width: 600px) {
+      .certificate-list {
+        font-size: 14px; /* Adjusted font size for smaller screens */
+      }
+    }
+
+    .certificate-list li {
+      font-size: 18px;
+      color: #605e5f;
+      padding: 10px 0;
+      border-bottom: 1px solid #ddd;
+      transition: background-color 0.2s; /* Add transition for smooth hover effect */
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      .certificate-list li {
+        font-size: 16px; /* Adjusted font size for smaller screens */
+        padding: 8px 0; /* Adjusted padding for smaller screens */
+      }
+    }
+
+    .certificate-list li:hover {
+      background-color: #e6d3dc; /* Change background color on hover */
+    }
+
+    .certificate-list li:last-child {
+      border-bottom: none;
+    }
+
+    @media (max-width: 600px) {
+      #certificates {
+        padding: 20px 10px;
+      }
+
+      .certificate-list li {
+        font-size: 16px;
+      }
+    }
+
+    
+ .card {
+      background: white;
+      margin-bottom: 30px;
+      border-radius: 10px;
+    }
+
+    .card img {
+      height: 200px;
+      object-fit: cover;
+      cursor: pointer;
+      transition: opacity 0.3s ease;
+    }
+
+    .card img:hover {
+      opacity: 0.8;
+    }
+
+    .card-description {
+      padding: 20px;
+    }
+
+    .card:hover .card-description {
+      background-color: #f6d6e844;
+      transform: scale(0.95);
+    }
+
+    .card-description h3 {
+      margin: 10px 0;
+      font-size: 20px;
+    }
+
+    .card-description p {
+      margin-top: 10px;
+    }
+
+    .card-footer {
+      padding: 0 20px 20px;
+    }
+
+    .btn.btn-primary {
+      display: inline-block;
+      background-color: #d6a3cd;
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+      margin-top: 20px; /* Add margin to separate from other content */
+      margin-bottom: 24px;
+      border-color: white;
+    }
+
+    .btn.btn-primary:hover {
+      background-color: #a15786bc;
+    }
+
+    .container {
+  max-width: 100%; /* Adjusted to fit the width of the viewport */
+  margin: 0 auto; /* Center the container horizontally */
 }
 
-@media (min-width: 768px) {
-  #certificates .container {
-    padding: 50px; /* Original padding for larger screens */
-  }
+section,
+main {
+  max-width: 100%; /* Adjusted to fit the width of the viewport */
+  margin: 0 auto; /* Center the section/main horizontally */
 }
 
-#certificates h2 {
-  font-size: 24px; /* Adjusted font size for smaller screens */
-  color: #881567;
-  text-align: center;
-  margin-bottom: 20px;
+/* Remove padding from section and main elements */
+section,
+main {
+  padding: 0; /* Remove padding */
 }
 
-@media (min-width: 768px) {
-  #certificates h2 {
-    font-size: 32px; /* Original font size for larger screens */
-  }
+h2,
+h3 {
+  font-size: 24px; /* Set the font size */
+  margin-bottom: 20px; /* Set the margin bottom */
+  text-align: center; /* Center align the text */
+  color: #881567; /* Set the text color */
 }
 
-.certificate-list {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  cursor: pointer;
+/* Additional styling for h2 */
+h2 {
+  font-weight: bold; /* Set font weight */
 }
 
-@media (max-width: 600px) {
-  .certificate-list {
-    font-size: 14px; /* Adjusted font size for smaller screens */
-  }
+/* Additional styling for h3 */
+h3 {
+  font-weight: normal; /* Set font weight */
 }
 
-.certificate-list li {
-  font-size: 18px;
-  color: #605e5f;
-  padding: 10px 0;
-  border-bottom: 1px solid #ddd;
-  transition: background-color 0.2s; /* Add transition for smooth hover effect */
-  text-align: center;
-}
-
-@media (max-width: 600px) {
-  .certificate-list li {
-    font-size: 16px; /* Adjusted font size for smaller screens */
-    padding: 8px 0; /* Adjusted padding for smaller screens */
-  }
-}
-
-
-.certificate-list li:hover {
-  background-color: #e6d3dc; /* Change background color on hover */
-}
-
-
-.certificate-list li:last-child {
-  border-bottom: none;
-}
-
-@media (max-width: 600px) {
-  #certificates {
-    padding: 20px 10px;
-  }
-
-  #certificates h2 {
-    font-size: 28px;
-  }
-
-  .certificate-list li {
-    font-size: 16px;
-  }
-}
-
-.grid {
-  display: flex;
-  flex-wrap: wrap; /* Allow columns to wrap on smaller screens */
-  justify-content: space-between; /* Ensure equal space between columns */
-}
-
-.column {
-  width: 100%; /* Set width to 100% for full-width columns on smaller screens */
-}
-
-@media (min-width: 768px) {
-  .column {
-    width: calc(50% - 20px); /* Adjusted width for columns on larger screens */
-    margin-bottom: 20px; /* Add margin between columns */
-  }
-}
-
-.card {
-  background: white;
-  border-radius: 10px;
-  overflow: hidden;
-  margin-bottom: 20px; /* Add margin between cards */
-  padding: 10px; /* Adjust padding for space inside the card */
-  box-sizing: border-box; /* Ensure padding is included in the width calculation */
-  width: 100%; /* Set width to 100% for responsiveness */
-}
-
-.card img {
-  width: 100%; /* Set image width to 100% for responsiveness */
-  height: auto; /* Allow the height to adjust proportionally based on the image width */
-  max-height: 200px; /* Limit the maximum height to 200px */
-  object-fit: cover; /* Ensure the image covers the entire space */
-  cursor: pointer; /* Change cursor to pointer */
-  transition: opacity 0.3s ease; /* Add transition for smooth opacity effect */
-}
-
-.card img:hover {
-  opacity: 0.8; /* Change opacity on hover */
-}
-
-.card-description {
-  display: flex;
-  padding: 10px; /* Adjust padding for space inside the card description */
-  flex-direction: column;
-  align-items: center; /* Center items horizontally */
-  text-align: center; /* Center text */
-  transition: transform 0.8s ease, background-color 0.3s ease; /* Add transition for smooth effect */
-}
-
-
-.card:hover .card-description {
-  background-color: #f6d6e844; /* Pink background on hover */
-  transform: scale(0.9); /* Slight zoom on hover */
-}
-
-.card-description h3 {
-  margin: 10px;
-  font-size: 20px;
-}
-
-.card-description p {
-  margin-top: 10px;
-}
-
-
-#projects h2 {
-  font-size: 32px;
-  color: #881567;
- 
-  margin-bottom: 20px;
-}
-
-.btn {
-  display: inline-block;
-  background-color: #d6a3cd;
-  color: #fff;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-  margin-top: 20px; /* Add margin to separate from other content */
-  margin-bottom: 24px;
-}
-
-.btn:hover {
-  background-color: #a15786bc;
-}
-
-#projects h2 {
-  font-size: 32px;
-  color: #881567;
-  text-align: center;
-  margin-bottom: 20px;
-}
 
 /* Footer styles */
 .footer {
@@ -748,7 +828,9 @@ main p:hover {
   padding: 20px;
   text-align: center;
 }
-
+.footer-heading {
+  color: #6e2c5b; /* Darker color for the footer h2 */
+}
 .footer-icons {
   font-size: 30px;
 }
@@ -766,18 +848,18 @@ main p:hover {
   padding: 20px; /* Decrease padding for smaller screens */
   font-family: "Teachers", sans-serif;
   color: purple;
+  font-size: 30px;
+  margin-bottom: 20px;
 }
 
 #contact h2 {
-  font-size: 24px; /* Adjusted font size for smaller screens */
-  color: #df1975;
-  font-family: "Teachers", sans-serif;
+  margin-bottom: 20px;
 }
 
 #contact form {
   max-width: 100%; /* Set max-width to 100% for responsiveness */
   margin: 0 auto;
-  padding: 0 10px; /* Adjust padding for smaller screens */
+  padding: 0 5px; /* Adjust padding for smaller screens */
 }
 
 #contact label {

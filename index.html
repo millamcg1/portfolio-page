@@ -11,6 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Figtree:ital,wght@0,300..900;1,300..900&family=Hind:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Quicksand:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Teachers:ital,wght@0,400..800;1,400..800&family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+ <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 
@@ -48,15 +49,11 @@
       </header>
       
       <main>
- <section class="grid grid-2-columns">
-    <div class="image-container">
-      <img src="images/avatar-3.jpg" alt="Avatar 3" class="img-responsive-1" />
-      <img src="images/avatar-1.jpeg" alt="Avatar 1" class="img-responsive-2" />
-    </div>
-    <div>
-      <a name="aboutme"></a>
-      <h2>< ABOUT ME /></h2>
-      <h3>Hello there!</h3>
+ <section id="aboutme" class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h2 class="text-center">ABOUT ME</h2>
+      <h3 class="text-center">Hello there!</h3>
       <p>
         I'm Camilla 👩🏻‍💻, a Brazilian passionate web developer that is making my way
         to an immersive digital experience living in Northern Ireland. 
@@ -75,10 +72,11 @@
       <p>
       📺 In my free time, I enjoy watching TV shows and listening to podcasts. I consider myself highly competitive, not in comparison to others, but in challenging myself. I've taught myself English, traveled extensively, and achieved many personal milestones.
       </p>
-
       <p> Let's connect and do some coding! 💻</p>
     </div>
-  </section>
+  </div>
+</section>
+
 <section id="skills">
 
   
@@ -87,7 +85,7 @@
           
           <h3 class="text-center">What do I know?</h3>
 
-<div class="skills-container">
+
       <ul class="skills-list">
          <li><i class="fas fa-paint-brush animated-icon"></i>
           <span class="skill-text">UI/UX</span></li>
@@ -177,102 +175,124 @@
 
 </div>
 
-
-
-<section id="certificates">
-
-  <h2>< Certificates /></h2>
-    <div class="container">
-      
-      <ul class="certificate-list">
-        <li>IBM - Designing User Interfaces and Experiences (UI/UX)</li>
-        <li>Coursera Project Network - Search Engine Optimization (SEO) with Squarespace</li>
-        <li>Coursera - Routing and Navigation Concepts in Angular</li>
-        <li>Coursera - Front End Web Development</li>
-        <li>SheCodes Basic - Introduction to Coding</li>
-        <li>SheCodes Basic Add On - Introduction to Web Development</li>
-        <li>SheCodes Plus - Web Development Engineer</li>
-        <li>SheCodes Plus Add on - Advanced Web Development</li>
-        <li>SheCodes - Responsive</li>
-        <li>SheCodes - Responsive Add-On</li>
-        <li>SheCodes Bootcamp - Advanced Python</li>
-        <li>SheCodes - React</li>
-        <li>SheCodes - Artificial Intelligence</li>
-      </ul>
-    </div>
-</section>
-<section id="projects">
-<h2> < Projects /> </h2>
-<section class="grid">
-  <div class="column">
-    <div class="card">
-      <img src="images/travel.png" alt="Recife" class="card-img">
-      <div class="card-description">
-        <h3>Travel Website</h3>
-        <p>A vibrant, user-friendly website showcasing the attractions of Recife, Brazil. It highlights local sights, food, and culture with engaging visuals and informative content. Technologies used include HTML5, CSS3, JavaScript, and React for creating a responsive and interactive user experience.</p>
-        <a href="https://recife-travel.netlify.app/" class="btn">Learn More</a>
-      </div>
-    </div>
-    
-    <div class="card">
-      <img src="images/my-past.png" alt="MyPast" class="card-img">
-      <div class="card-description">
-        <h3>My Past Website</h3>
-        <p>A personal website designed to reflect on past experiences, achievements, and memories. It provides a visually appealing timeline of events with descriptive narratives. The site is developed with HTML5, CSS3, JavaScript, and Angular for a dynamic and responsive interface.</p>
-        <a href="https://my-past.netlify.app/" class="btn">Learn More</a>
-      </div>
-    </div>
-     <div class="card">
-    <img src="images/about-me.png" alt="About Me" class="card-img">
-    <div class="card-description">
-      <h3>About Me App</h3>
-      <p>A portfolio website showcasing various projects with a focus on responsive design. It adapts seamlessly to different screen sizes, providing a consistent user experience across devices. Technologies employed include HTML5, CSS3, and Bootstrap.</p>
-      <a href="https://responsive-project1305.netlify.app/" class="btn">Learn More</a>
-    </div>
-  </div>
-   
-  </div>
   
-  <div class="column">
-    <div class="container">
-    <div class="card">
-      <img src="images/movie-generator.png" alt="Movie Generator" class="card-img">
-      <div class="card-description">
-        <h3>AI Movie Generator</h3>
-        <p>An innovative application leveraging AI to generate horror movie ideas. Users can input preferences and get unique movie plots generated by the AI. Built using HTML, CSS, JavaScript, and a machine learning model integrated with the website.</p>
-        <a href="https://horror-movies-ai.netlify.app/" class="btn">Learn More</a>
+
+  
+<section id="certificates">
+  
+  <br>
+  <br>
+  <br>
+  <h3 class="text-center">Certificates</h3>
+  <div class="row justify-content-center">
+    <br>
+  
+        <ul class="certificate-list">
+          <li>IBM - Designing User Interfaces and Experiences (UI/UX)</li>
+          <li>Coursera Project Network - Search Engine Optimization (SEO) with Squarespace</li>
+          <li>Coursera - Routing and Navigation Concepts in Angular</li>
+          <li>Coursera - Front End Web Development</li>
+          <li>SheCodes Basic - Introduction to Coding</li>
+          <li>SheCodes Basic Add On - Introduction to Web Development</li>
+          <li>SheCodes Plus - Web Development Engineer</li>
+          <li>SheCodes Plus - Advanced Web Development</li>
+          <li>SheCodes - Responsive</li>
+          <li>SheCodes - Responsive Add-On</li>
+          <li>SheCodes Bootcamp - Advanced Python</li>
+          <li>SheCodes - React</li>
+          <li>SheCodes - Artificial Intelligence</li>
+        </ul>
       </div>
     </div>
-    
-    <div class="card">
-      <img src="images/quiz.png" alt="Python Quiz" class="card-img">
-      <div class="card-description">
-        <h3>Beatles Python Quiz</h3>
-        <p>A Python script for a Beatles-themed quiz game. It asks six questions about the Beatles and calculates the user's score based on their answers. The script includes basic input handling and score tracking, demonstrating fundamental Python programming skills.</p>
-        <a href="https://github.com/millamcg1/portfolio-py/commit/8f7d0961c8794914a0ff1d0ff06e582c6d1d7017" class="btn">Learn More</a>
+  </div>
+</div>
+
+</section> 
+<section id="projects"></section>
+
+  
+  <section class="secondary container py-5">
+    <h3 class="text-center mb-4">Projects</h3>
+    <div class="row">
+
+      <div class="col-md-6 col-lg-4">
+        <div class="card">
+          <img src="images/travel.png" alt="Recife" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">Travel Website</h5>
+            <p class="card-text">A vibrant, user-friendly website showcasing the attractions of Recife, Brazil. It highlights local sights, food, and culture with engaging visuals and informative content. Technologies used include HTML5, CSS3, JavaScript, and React for creating a responsive and interactive user experience.</p>
+            <a href="https://recife-travel.netlify.app/" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
+      </div>
+
+    <div class="col-md-6 col-lg-4">
+      <div class="card">
+        <img src="images/my-past.png" alt="MyPast" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">My Past Website</h5>
+          <p class="card-text">A personal website designed to reflect on past experiences, achievements, and memories. It provides a visually appealing timeline of events with descriptive narratives. The site is developed with HTML5, CSS3, JavaScript, and Angular for a dynamic and responsive interface.</p>
+          <a href="https://my-past.netlify.app/" class="btn btn-primary">Learn More</a>
+        </div>
       </div>
     </div>
 
-     <div class="card">
-    <img src="images/weather-app.png" alt="Weather App" class="card-img">
-    <div class="card-description">
-      <h3>Weather App</h3>
-      <p>A straightforward weather application providing real-time weather updates for Omagh and other locations. It features current conditions, forecasts, and weather alerts. Developed using HTML5, CSS3, JavaScript, and API integration for fetching weather data.</p>
-      <a href="https://weatherappomagh.netlify.app/" class="btn">Learn More</a>
+    <div class="col-md-6 col-lg-4">
+      <div class="card">
+        <img src="images/about-me.png" alt="About Me" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">About Me App</h5>
+          <p class="card-text">A portfolio website showcasing various projects with a focus on responsive design. It adapts seamlessly to different screen sizes, providing a consistent user experience across devices. Technologies employed include HTML5, CSS3, and Bootstrap.</p>
+          <a href="https://responsive-project1305.netlify.app/" class="btn btn-primary">Learn More</a>
+        </div>
+      </div>
     </div>
 
-    </section>
-    
-    
+    <div class="col-md-6 col-lg-4">
+      <div class="card">
+        <img src="images/movie-generator.png" alt="Movie Generator" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">AI Movie Generator</h5>
+          <p class="card-text">An innovative application leveraging AI to generate horror movie ideas. Users can input preferences and get unique movie plots generated by the AI. Built using HTML, CSS, JavaScript, and a machine learning model integrated with the website.</p>
+          <a href="https://horror-movies-ai.netlify.app/" class="btn btn-primary">Learn More</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-4">
+      <div class="card">
+        <img src="images/quiz.png" alt="Python Quiz" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Beatles Python Quiz</h5>
+          <p class="card-text">A Python script for a Beatles-themed quiz game. It asks six questions about the Beatles and calculates the user's score based on their answers. The script includes basic input handling and score tracking, demonstrating fundamental Python programming skills.</p>
+          <a href="https://github.com/millamcg1/portfolio-py/commit/8f7d0961c8794914a0ff1d0ff06e582c6d1d7017" class="btn btn-primary">Learn More</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-4">
+      <div class="card">
+        <img src="images/weather-app.png" alt="Weather App" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Weather App</h5>
+          <p class="card-text">A straightforward weather application providing real-time weather updates for Omagh and other locations. It features current conditions, forecasts, and weather alerts. Developed using HTML5, CSS3, JavaScript, and API integration for fetching weather data.</p>
+          <a href="https://weatherappomagh.netlify.app/" class="btn btn-primary">Learn More</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
 <footer>
 
   <section id="contact">
-  <h2>Contact</h2>
+  <h2 class="footer-heading">Contact</h2>
   <form action="mailto:your-email@example.com" method="post" enctype="text/plain">
     <div>
       <label for="name">Name:</label>
       <input type="text" id="name" name="name" required>
     </div>
+
     <div>
       <label for="email">Email:</label>
       <input type="email" id="email" name="email" required>
@@ -305,5 +325,9 @@
  </main> 
 </body>
 <script src="script.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
 
 </html>
