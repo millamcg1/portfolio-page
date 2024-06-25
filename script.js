@@ -31,3 +31,16 @@ function sendEmail(event) {
     body
   )}`;
 }
+
+// Wait for the page to load completely
+window.addEventListener('load', function() {
+  // Get the loader element
+  var loader = document.querySelector('.loader');
+  
+  // Set timeout to hide the loader after 5 seconds
+  setTimeout(function() {
+    // Hide the loader smoothly
+    loader.classList.add('loader-hidden');
+  }, 5000); // 5000 milliseconds = 5 seconds
+});
+

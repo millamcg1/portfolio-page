@@ -1,61 +1,57 @@
+
+@property --g10-x {
+    syntax: "<length>";
+    inherits: false;
+    initial-value: 0;
+}
+@property --g10-y {
+    syntax: "<length>";
+    inherits: false;
+    initial-value: 0;
+}
+@property --g10-a {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 0deg;
+}
+
+/* Global styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Body styles */
 body {
-  font-family: "Ubuntu Sans", sans-serif;
+  font-family: "Montserrat", sans-serif;
   background: #ffffff;
-  padding: 20px; /* Add padding to the entire body */
+  padding: 20px;
 }
 
-/* About Me Section */
-#aboutme {
-  padding: 50px 0; /* Add padding to the top and bottom of the section */
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  body {
+    padding: 15px; /* Adjust padding for smaller screens */
+  }
 }
 
-#aboutme h2 {
-  font-weight: bold; /* Set font weight */
-  font-size: 24px; /* Set font size */
-  margin-bottom: 20px; /* Add margin at the bottom */
-  text-align: center; /* Center align the text */
-  color: #881567; /* Set the text color */
+@media (max-width: 576px) {
+  body {
+    padding: 10px; /* Further reduce padding for extra small screens */
+  }
 }
-
-#aboutme h3 {
-  font-weight: normal; /* Set font weight */
-  font-size: 20px; /* Set font size */
-  margin-top: 20px; /* Add margin at the top */
-  margin-bottom: 20px; /* Add margin at the bottom */
-  text-align: center; /* Center align the text */
-  color: #7f3774; /* Set the text color */
-  letter-spacing: 5px; /* Add letter spacing */
-}
-
-#aboutme p {
-  font-size: 16px; /* Set font size */
-  color: #44203d; /* Set text color */
-  line-height: 1.8; /* Set line height */
-}
-
-
- h2, h3 {
-      text-align: center;
-      color: #881567;
-      margin: 20px;
-    }
-
-    h2 {
-      font-size: 32px; /* Same font size for h2 across all sections */
-      margin-bottom: 30px;
-    }
-
-    h3 {
-      font-size: 24px; /* Same font size for h3 across all sections */
-      margin-bottom: 20px;
-    }
 
 
 .certificate-list {
-  padding: 10;
-  margin: 20px;
+  padding: 10px;
+  margin: 20px auto; /* Center the list horizontally */
   list-style-type: none;
   text-align: center;
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  justify-content: center; /* Center items horizontally */
 }
 
 .certificate-list li {
@@ -63,323 +59,306 @@ body {
   text-align: center;
   transition: background-color 0.2s, border-color 0.2s;
   border: 2px solid transparent;
+  flex: 0 0 calc(33.33% - 20px); /* Three items per row; adjust as needed */
+  max-width: calc(33.33% - 20px); /* Ensure items don't exceed one-third of the container width */
+  margin: 10px; /* Adjust margin between items */
+  box-sizing: border-box; /* Include padding and border in width calculation */
 }
 
 .certificate-list li:hover {
-  background-color: #e6d3dc; /* Change background color on hover */
-  border-color: #e6d3dc; /* Change border color on hover */
+  background-color: #30343F; 
+  border-color: #89023E;
   padding: 10px;
 }
 
+.certificate-list li a {
+  text-decoration: none; /* Remove underline from links */
+  color: inherit; /* Inherit color from parent */
+  transition: color 0.2s; /* Smooth color transition */
+}
+
+.certificate-list li a:hover {
+  color: #89023E;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .certificate-list li {
+    flex: 0 0 calc(50% - 20px); /* Two items per row on smaller screens */
+    max-width: calc(50% - 20px); /* Adjust max-width accordingly */
+  }
+}
+
+/* Additional responsive adjustments for body padding */
+@media (max-width: 576px) {
+  body {
+    padding: 10px; /* Reduce padding on extra small screens */
+  }
+}
+
+/* Optional: Adjustments for other elements as needed */
+
+
+
+#header-container {
+  position: fixed; /* Fixed position at the top of the viewport */
+  top: 0;
+  left: 0;
+  width: 100%; /* Full width of the viewport */
+  z-index: 1000; /* Ensure it's above other content */
+  font-family: "Montserrat", sans-serif; /* Font family for text */
+  background: #ffffff; /* Background color for readability */
+  padding: 10px 20px; /* Padding around content inside header */
+  box-sizing: border-box; /* Include padding in total width calculation */
+  transition: all 0.3s ease; /* Smooth transition for responsiveness */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #header-container {
+    padding: 10px; /* Adjust padding for smaller screens */
+  }
+}
+
+@media (max-width: 576px) {
+  #header-container {
+    padding: 5px; /* Further reduce padding for extra small screens */
+  }
+}
+
+
+/* Base styles for navbar */
+.navbar-brand {
+  color: #000000; /* Logo color */
+  font-size: 2.5rem; /* Adjust logo font size */
+  text-decoration: none; /* Remove underline from links */
+}
+
+.navbar-nav .nav-link {
+  color: #000000; /* Link color */
+  font-weight: bold;
+  font-size: 1rem; /* Adjust font size */
+  text-transform: uppercase;
+  padding: 10px 20px;
+  text-decoration: none; /* Remove underline from links */
+  position: relative; /* Ensure proper stacking of border */
+  overflow: hidden; /* Hide overflow to prevent clipping of animated borders */
+}
+
+/* Border animation keyframes */
+@keyframes borderExpand {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+  }
+}
+
+.navbar-brand {
+  display: inline-block;
+  transition: transform 0.3s ease; /* Add a smooth transition for transform */
+  
+}
+
+.navbar-brand:hover {
+  transform: scale(1.1); /* Scale up the logo on hover */
+}
+
+
+.navbar-nav .nav-link::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #dacbd1; /* Initial border color */
+  transition: width 0.3s ease-out, opacity 0.3s ease-out; /* Transition for width and opacity */
+  z-index: -1; /* Behind the link text */
+}
+
+.navbar-nav .nav-link:hover::before {
+  animation: borderExpand 0.3s forwards; /* Apply animation on hover */
+}
+
+.navbar-nav .nav-link:hover {
+  color: #d89cb7; /* Color change on hover */
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navbar-brand {
+    font-size: 1.8rem; /* Decrease logo font size for smaller screens */
+  }
+  
+  .navbar-nav .nav-link {
+    font-size: 0.9rem; /* Decrease link font size for smaller screens */
+    padding: 10px 12px; /* Decrease padding for links on smaller screens */
+  }
+}
+
+.navbar-toggler {
+  background-color: #ff69b4; 
+  border-color: #ff69b4; 
+  color: #fff; 
+  padding: 10px 15px; 
+  border-radius: 5px; 
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+
+/* Hover effect */
+.navbar-toggler:hover {
+  background-color: #ff4f9e; 
+  border-color: #ff4f9e; 
+}
+
+/* Video Container */
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.9;
+  border-radius: 10px;
+}
+
+/* Clip-path styles for top and bottom sections */
+.top {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 50px));
+}
+
+.bottom {
+  padding-top: 50px;
+  clip-path: polygon(0 0, 100% 50px, 100% 100%, 0 100%);
+  margin-top: -40px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .video-container {
+    height: 50vh; /* Adjust video container height for smaller screens */
+  }
+}
+
+/* Base styles for the certificate list */
+.certificate-list {
+  padding: 10px;
+  margin: 20px auto; /* Center the list horizontally and provide vertical margin */
+  list-style-type: none;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  max-width: 600px; /* Limit the maximum width of the list for readability */
+}
+
+/* Styles for each list item */
+.certificate-list li {
+  padding: 10px;
+  text-align: center;
+  transition: background-color 0.2s, border-color 0.2s;
+  border: 2px solid transparent;
+  margin-bottom: 10px; /* Add spacing between list items */
+}
+
+/* Hover effect for list items */
+.certificate-list li:hover {
+  background-color: #30343F; 
+  border-color: #89023E;
+}
+
+/* Styles for links within list items */
+.certificate-list li a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s;
+}
+
+/* Hover effect for links within list items */
+.certificate-list li a:hover {
+  color: #89023E;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .certificate-list {
+    padding: 5px; /* Reduce padding on smaller screens */
+  }
+
+  .certificate-list li {
+    padding: 8px;
+    font-size: 0.9rem; /* Decrease font size for list items */
+  }
+}
 
 .skills-list {
   list-style-type: none;
   padding: 0;
+  font-family: "Montserrat", sans-serif;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-botton: 20px;
 }
 
 .skills-list li {
-  padding: 10px 0;
+  padding: 20px;
+  padding-bottom: 40px;
   text-align: center;
   transition: background-color 0.2s;
+  flex: 0 0 calc(50% - 20px); /* Two items per row on medium screens; adjust as needed */
+  max-width: calc(50% - 20px); /* Ensure items don't exceed half of the container width */
+  margin: 10px;
+  box-sizing: border-box;
+  
 }
 
 .skills-list li:hover {
-  background-color: #e6d3dc; /* Change background color on hover */
+  background-color: #d3d6e6;
 }
 
 .animated-icon {
   margin-right: 10px;
-}
-
-@media (max-width: 600px) {
-  h2 {
-    font-size: 28px; /* Adjust font size for smaller screens */
-  }
-
-  h3 {
-    font-size: 20px; /* Adjust font size for smaller screens */
-  }
-
-  .skills-list li,
-  .certificate-list li {
-    font-size: 16px; /* Adjust font size for smaller screens */
-    padding: 8px 0; /* Adjust padding for smaller screens */
-  }
-}
-
-
-    .card-body p {
-      font-size: 14px;
-    }
-
-
-.text-center {
-  text-align: center;
-}
-
-.grid {
-  display: grid;
-  grid-gap: 64px;
-}
-
-.img-responsive-1,
-.img-responsive-2 {
-  width: 100%;
-  max-width: 60%; /* Smaller max width for larger screens */
-  display: block;
-  transition: all 0.3s ease; /* Smooth transitions */
-  cursor: pointer; /* Add cursor pointer */
-  margin-top: 30%;
-  margin-left: 30%;
-  text-align: center;
-  background-color: #7a3061;
-}
-
-.image-container {
-  display: flex;
-  flex-wrap: wrap; /* Allow images to wrap on smaller screens */
-  gap: 10px; /* Adjust the gap between images */
-  justify-content: center; /* Center the images */
-}
-
-.img-responsive-1 {
-  border-radius: 10% 30% 40% 10%;
-}
-
-
-
-/* Hover effect */
-.img-responsive-1:hover,
-.img-responsive-2:hover {
-  opacity: 0.8; /* Reduce opacity on hover */
-  transform: scale(1.05); /* Slightly zoom in on hover */
-}
-
-/* Styles for small devices (mobile phones) */
-@media (max-width: 600px) {
-  .img-responsive-1,
-  .img-responsive-2 {
-    max-width: 90%; /* Make images larger on smaller screens */
-    margin: 0 auto; /* Center images */
-  }
-
-  .img-responsive-2 {
-    margin-top: 10px; /* Adjust margin for second image */
-  }
-}
-
-/* Styles for medium devices (tablets) */
-@media (min-width: 601px) and (max-width: 1024px) {
-  .img-responsive-1,
-  .img-responsive-2 {
-    max-width: 70%; /* Adjust max-width for tablets */
-  }
-}
-
-
-
-.grid-2-columns {
-  grid-template-columns: 1fr 1fr;
-}
-
-.grid-3-columns {
-  grid-template-columns: 1fr 1fr 1fr;
-}
-
-.grid-3-columns-with-first-narrow {
-  grid-template-columns: 1fr 2fr 2fr;
-}
-
-
-section {
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 100px;
-}
-
-section.secondary {
-  background: #f8f8f8;
-}
-
-/* Header styles */
-header {
-  position: relative;
-  background-color: #dfcddc;
-  opacity: 0.8;
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: rgb(180, 60, 116);
-  text-align: center;
-  padding: 40px 0 100px;
-  border-top: 20px;
-  
-
-  overflow: hidden; /* Ensure the waves are contained within the header */
-}
-
-
-
-/* Wave container */
-.wave-container {
-  position: absolute;
-  bottom: 100;
-  width: 100%;
-  text-align: center;
-  height: 100px;
-  overflow: hidden;
-}
-
-.waves {
-  position:relative;
-  width: 100%;
-  height: 150%;
-  bottom: -10px;
-  
-}
-
-.parallax > use {
-  animation: moveWaves 15s  infinite;
-}
-
-@keyframes moveWaves {
-  0% {
-    transform: translate3d(-90px, 0, 0);
-  }
-  100% {
-    transform: translate3d(85px, 0, 0);
-  }
-}
-
-/* Other header elements styling remains unchanged */
-header h1 {
-  font-weight: 300;
-  font-size: 10px;
-  line-height: 1;
-  margin: 20px 0;
-  opacity: 0; /* Initially hidden for fade-in effect */
-  transform: translateY(20px); /* Initially shifted down for slide-in effect */
-  animation: fadeInSlideUp 3s ease-out forwards; /* Animation applied */
-  font-family: "Roboto Mono", monospace;
-  cursor: pointer;
-  
-}
-
-/* Define hover effect */
-header h1:hover {
-  color: #901085; /* Change color on hover */
-  
-}
-
-
-
-@keyframes fadeInSlideUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@media (max-width: 600px) {
-  header h1 {
-    font-size: 48px;
-    margin: 20px 0;
-    animation-duration: 1.5s; /* Longer animation duration for smaller screens */
-  }
-}
-
-@media (min-width: 601px) and (max-width: 1024px) {
-  header h1 {
-    font-size: 72px;
-    margin: 25px 0;
-    animation-duration: 1.2s; /* Medium animation duration for tablets */
-  }
-}
-
-@media (min-width: 1025px) {
-  header h1 {
-    font-size: 96px;
-    margin: 30px 0;
-    animation-duration: 1s; /* Default animation duration for desktops */
-  }
-}
-
-header h2 {
-  font-weight: 400;
-  font-size: 30px;
-  line-height: 1.5;
-  margin: 0;
-  color: rgb(147, 121, 146);
-  font-family: "Roboto Mono", monospace;
-}
-
-#typing {
-  border-right: 2px solid;
-  display: inline-block;
-  animation: blink 0.7s steps(1) infinite;
-}
-
-@keyframes blink {
-  50% {
-    border-color: transparent;
-  }
-}
-
-header h3 {
-  font-weight: 900;
   font-size: 24px;
-  line-height: 1.5;
-  letter-spacing: 5px;
-  margin: 0;
-  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
-/* Style for the fixed "Home" button */
-.home-button {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  padding: 10px 20px;
-  background-color: #975e8d; /* Adjust button background color */
-  color: white;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 5px;
-  z-index: 999; /* Ensure it's above other content */
-  transition: background-color 0.3s;
+.animated-icon:hover {
+  transform: scale(1.2);
 }
 
-/* Add hover effect */
-.home-button:hover {
-  background-color: #c83d97; /* Change background color on hover */
-  color: white;
+@media (max-width: 768px) {
+  .skills-list li {
+    flex: 0 0 calc(50% - 20px); /* Two items per row on tablets; adjust as needed */
+    max-width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 576px) {
+  .skills-list li {
+    flex: 0 0 calc(100% - 20px); /* Single item per row on mobile devices */
+    max-width: calc(100% - 20px);
+  }
 }
 
 
-header a {
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 1.5;
-  text-align: center;
-  color: #833d76;
-  padding: 16px 32px;
-  margin-top: 32px;
-  display: inline-block;
-  letter-spacing: 3px;
-  text-decoration: none;
-  text-transform: uppercase;
-  background: white;
-  cursor: pointer;
-  transition: transform 0.3s, color 0.3s; /* Add transition for smooth effect */
-}
 
-/* Add hover effect */
-header a:hover {
-  transform: scale(1.01); /* Zoom effect on hover */
-  color: #c83d97; /* Change text color on hover */
-}
-
-
-/* Reset CSS */
+/* Global styles */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -387,154 +366,110 @@ header a:hover {
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: #ffffff;
-}
-
-
-
-.container {
-  max-width: 1400px;
-  margin: 0 auto;
+  font-family: "Montserrat", sans-serif;
+  background-color: #ffffff;
+  padding: 20px;
 }
 
 .text-center {
   text-align: center;
 }
 
-/* Grid */
+/* Grid layout styles */
 .grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  padding: 30px;
+  display: grid;
+  grid-gap: 32px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 .grid-2-columns {
-  justify-content: space-between;
+  grid-template-columns: 1fr 1fr;
 }
 
-.image-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.grid-3-columns {
+  grid-template-columns: repeat(3, 1fr);
 }
 
-.img-responsive-1,
-.img-responsive-2 {
-  width: 100%;
-  max-width: 60%; 
-  display: block;
-  transition: all 0.3s ease; 
-  cursor: pointer;
-  margin: 15px 0; 
-  text-align: center;
-  background-color: #7a3061;
+.grid-3-columns-with-first-narrow {
+  grid-template-columns: 1fr 2fr 2fr;
 }
 
-.img-responsive-1 {
-  border-radius: 10% 30% 40% 10%;
-}
-
-.img-responsive-2 {
-  border-radius: 40% 10% 30% 10%;
-}
-
-/* Hover effect */
-.img-responsive-1:hover,
-.img-responsive-2:hover {
-  opacity: 0.8; 
-  transform: scale(1.05); 
-}
-
-/* Styles for small devices (mobile phones) */
-@media (max-width: 600px) {
-  .img-responsive-1,
-  .img-responsive-2 {
-    max-width: 90%; 
-    margin: 10px auto; 
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .grid {
+    grid-gap: 20px;
+    padding: 10px;
   }
 }
 
-/* Styles for medium devices (tablets) */
-@media (min-width: 601px) and (max-width: 1024px) {
-  .img-responsive-1,
-  .img-responsive-2 {
-    max-width: 70%; 
+@media (max-width: 768px) {
+  .grid {
+    grid-gap: 16px;
+    padding: 10px;
+  }
+
+  .grid-3-columns-with-first-narrow {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
-/* Content Section */
-.grid-2-columns > div {
-  flex: 1;
-  padding: 10px;
+@media (max-width: 576px) {
+  .grid {
+    grid-gap: 10px;
+    padding: 10px;
+  }
+
+  .grid-2-columns,
+  .grid-3-columns,
+  .grid-3-columns-with-first-narrow {
+    grid-template-columns: 1fr;
+  }
 }
 
-.grid-2-columns h2,
-.grid-2-columns h3,
-.grid-2-columns p {
-  margin-bottom: 20px;
-}
-
-.grid-2-columns h2 {
-  font-size: 24px;
-  color: #c3439f;
-}
-
-.grid-2-columns h3 {
-  margin-top: 20px;
-  font-size: 20px;
-  color: #7f3774;
-  letter-spacing: 5px;
-}
-
-.grid-2-columns p {
-  font-size: 16px;
-  color: #44203d;
-  line-height: 1.8;
-}
-
+/* Base styles for main */
+/* Styles for main section */
 main {
   background-color: white;
+  padding: 10px; /* Default padding */
+  max-width: 1200px; /* Max width for larger screens */
+  margin: 0 auto; /* Center align main */
+  box-sizing: border-box; /* Ensure padding is included in the width */
 }
 
+/* Heading styles */
 main h2 {
   font-weight: 700;
-  font-size: 16px;
+  font-size: 24px; /* Increase font size for readability */
   line-height: 1.5;
-  margin: 0;
-  letter-spacing: 5px;
-  color: #9e5a8d;
-  opacity: 0.3;
+  margin: 20px 0 10px; /* Adjust margin for spacing */
+  letter-spacing: 2px; /* Reduce letter spacing */
+  color: #652a3b;
+  opacity: 0.7;
   text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
 }
 
 main h3 {
   font-weight: 700;
-  font-size: 40px;
+  font-size: 32px; /* Increase font size for readability */
   line-height: 1.5;
-  color: #c83d97;
-  margin: 20;
-  font-family: "Roboto Mono", monospace;
-  cursor: pointer;
+  color: #89023E;
+  margin: 20px 0; /* Adjust margin for spacing */
+  font-family: "Montserrat", sans-serif;
 }
 
 main h4 {
   font-weight: 700;
-  font-size: 24px;
-  line-height: 1;
+  font-size: 20px; /* Increase font size for readability */
+  line-height: 1.2;
   color: #272044;
-  margin: 0;
+  margin: 10px 0; /* Adjust margin for spacing */
+  font-family: "Montserrat", sans-serif;
 }
 
-main h5 {
-  font-weight: 700;
-  font-size: 13px;
-  margin: 0;
-  line-height: 1;
-  color: #272044;
-}
-
+/* Paragraph styles */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -546,60 +481,80 @@ main h5 {
 
 main p {
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 16px;
-  line-height: 1.5;
-  color: #44203d;
+  line-height: 1.6;
+  color: #30343F;
   opacity: 0.7;
   animation: fadeIn 1s ease; /* Apply fadeIn animation */
   text-align: justify;
   transition: transform 0.8s ease, background-color 0.3s ease; /* Add transition for smooth effect */
   cursor: pointer;
+  font-family: "Montserrat", sans-serif;
 }
 
 main p:hover {
-  background-color: #f6d6e844; /* Pink background on hover */
+  background-color: #edc7d2;
   transform: scale(1.02); /* Slight zoom on hover */
+  padding: 20px; /* Increase padding on hover */
 }
 
-.skills-container {
-  max-width: 600px;
-  margin: 0 auto;
-  background-color: black;
-  color: #ffffff;
-  padding: 20px; /* Add padding for space around the items */
-  display: grid; /* Use grid layout */
-  grid-gap: 20px; /* Add gap between grid items */
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5); /* Add black shadow */
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  main {
+    padding: 10px; /* Reduce padding */
+  }
+
+  main h2 {
+    font-size: 20px; /* Decrease font size */
+    margin: 10px 0;
+  }
+
+  main h3 {
+    font-size: 28px; /* Decrease font size */
+    margin: 10px 0;
+  }
+
+  main h4 {
+    font-size: 18px; /* Decrease font size */
+    margin: 5px 0;
+  }
+
+  main p {
+    font-size: 14px; /* Decrease font size */
+    line-height: 1.5;
+  }
 }
 
-.skill-text {
-  margin-top: 20px;
-  font-size: 30px;
-  font-weight: 700;
-  padding-top: 5px; /* Add padding top */
-  font-family: "Ubuntu Sans", sans-serif;
-  color: #7a3061;
-  cursor: pointer;
-  transition: color 0.6s, transform 0.3s; /* Add transition for color change and zoom out effect */
-}
+@media (max-width: 576px) {
+  main h2 {
+    font-size: 18px; /* Further decrease font size */
+  }
 
-.skill-text:hover {
-  color: #ff69b4; /* Change color to pink on hover */
-  transform: scale(0.5); /* Zoom out effect on hover */
+  main h3 {
+    font-size: 24px; /* Further decrease font size */
+  }
+
+  main h4 {
+    font-size: 16px; /* Further decrease font size */
+  }
+
+  main p {
+    font-size: 13px; /* Further decrease font size */
+  }
 }
 
 
 .skills-container {
   max-width: 100%; /* Adjusted to fit the width of the viewport */
   margin-top: 30px;
-  background-color: rgb(255, 255, 255);
-  
+  background-color: #FFD9DA;
   color: #ffffff;
-  padding: 20px; /* Reduced padding for smaller screens */
+  padding: 20px; /* Padding around the items */
   display: flex;
   justify-content: center; /* Center the items horizontally */
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* Allow items to wrap to the next line on smaller screens */
+  font-family: "Montserrat", sans-serif;
 }
 
 /* Adjustments for smaller screens */
@@ -616,21 +571,24 @@ main p:hover {
   }
 }
 
-
 .skills-list {
   list-style: none;
   padding: 0;
   margin: 0;
-  display: inline-block;
+  display: flex;
+  justify-content: space-around; /* Distribute items evenly */
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  cursor: pointer;
 }
 
 .skills-list li {
   margin-top: 10px;
   text-align: center; /* Center text */
-  display: inline-block;
-  
-  align-items: center; /* Center items horizontally */
+  flex: 0 0 calc(33.33% - 20px); /* Three items per row; adjust as needed */
+  max-width: calc(33.33% - 20px); /* Ensure items don't exceed one-third of the container width */
   padding: 20px;
+  box-sizing: border-box; /* Include padding in width calculation */
+  cursor: pointer;
 }
 
 .animated-icon {
@@ -641,99 +599,56 @@ main p:hover {
 }
 
 .animated-icon:hover {
-  transform: scale(1.3); 
+  transform: scale(1.3); /* Zoom effect on hover */
 }
 
 @keyframes colorChange {
   0% {
-    color: #e691d2; /* Start color */
+    color: #EA638C;
+
   }
   100% {
-    color: #a857df; /* End color */
+    color: #89023E;
   }
 }
 
 .skill-text {
-  font-size: 10px; 
+  font-size: 16px; /* Adjust text size */
+  padding: 10px; /* Padding around text */
+  margin: 10px; /* Margin between items */
+}
+
+.certificate-list {
+  padding: 0; /* Adjusted padding */
+  margin: 20px;
+  list-style-type: none;
+  text-align: center;
+}
+
+.certificate-list li {
   padding: 10px;
-  margin: 10px;
+  text-align: center;
+  transition: background-color 0.2s, border-color 0.2s;
+  border: 2px solid transparent;
+  display: block; /* Ensure each list item is displayed as a block */
+  margin-bottom: 10px; /* Add margin between list items */
 }
 
-@keyframes colorChange {
-  0% {
-    color: #e691d2; /* Start color */
-  }
-  100% {
-    color: #a857df; /* End color */
-  }
+.certificate-list li:hover {
+  background-color: #e6d3dc; /* Change background color on hover */
+  border-color: #e6d3dc; /* Change border color on hover */
+  padding: 10px; /* Adjusted padding on hover */
 }
-
-#certificates .container {
-      max-width: 100%;
-      padding: 15px; /* Adjusted padding for smaller screens */
-      margin: 15px; /* Adjusted margin for smaller screens */
-      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5); /* Add black shadow */
-    }
-
-    @media (min-width: 768px) {
-      #certificates .container {
-        padding: 40px; /* Original padding for larger screens */
-      }
-    }
-
-
-    .certificate-list {
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
-      cursor: pointer;
-    }
-
-    @media (max-width: 600px) {
-      .certificate-list {
-        font-size: 14px; /* Adjusted font size for smaller screens */
-      }
-    }
-
-    .certificate-list li {
-      font-size: 18px;
-      color: #605e5f;
-      padding: 10px 0;
-      border-bottom: 1px solid #ddd;
-      transition: background-color 0.2s; /* Add transition for smooth hover effect */
-      text-align: center;
-    }
-
-    @media (max-width: 600px) {
-      .certificate-list li {
-        font-size: 16px; /* Adjusted font size for smaller screens */
-        padding: 8px 0; /* Adjusted padding for smaller screens */
-      }
-    }
-
-    .certificate-list li:hover {
-      background-color: #e6d3dc; /* Change background color on hover */
-    }
-
-    .certificate-list li:last-child {
-      border-bottom: none;
-    }
-
-    @media (max-width: 600px) {
-      #certificates {
-        padding: 20px 10px;
-      }
-
-      .certificate-list li {
-        font-size: 16px;
-      }
-    }
 
     
  .card {
       background: white;
       margin-bottom: 30px;
       border-radius: 10px;
+      text-align: center;
+      color:#30343F;
+      font-family: "Montserrat", sans-serif;
+      
     }
 
     .card img {
@@ -749,12 +664,15 @@ main p:hover {
 
     .card-description {
       padding: 20px;
+      color: rgb(48, 69, 124);
     }
 
-    .card:hover .card-description {
-      background-color: #f6d6e844;
-      transform: scale(0.95);
-    }
+   .card:hover .card-description {
+  background-color: #ea638c; /* Adjusted background color */
+  transform: scale(0.95); /* Scale down effect */
+  transition: background-color 0.5s ease, transform 0.5s ease; /* Slower transition */
+}
+
 
     .card-description h3 {
       margin: 10px 0;
@@ -763,6 +681,7 @@ main p:hover {
 
     .card-description p {
       margin-top: 10px;
+      
     }
 
     .card-footer {
@@ -770,20 +689,21 @@ main p:hover {
     }
 
     .btn.btn-primary {
-      display: inline-block;
-      background-color: #d6a3cd;
-      color: #fff;
-      padding: 10px 20px;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background-color 0.3s ease;
-      margin-top: 20px; /* Add margin to separate from other content */
-      margin-bottom: 24px;
-      border-color: white;
-    }
+  display: inline-block;
+  background-color: #d78e90;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  margin-top: 20px; /* Add margin to separate from other content */
+  margin-bottom: 24px;
+  border-color: white;
+}
 
     .btn.btn-primary:hover {
-      background-color: #a15786bc;
+      background-color: #c35caf;
+      border: none;
     }
 
     .container {
@@ -808,12 +728,14 @@ h3 {
   font-size: 24px; /* Set the font size */
   margin-bottom: 20px; /* Set the margin bottom */
   text-align: center; /* Center align the text */
-  color: #881567; /* Set the text color */
+  color: #2e1588; /* Set the text color */
+  
 }
 
 /* Additional styling for h2 */
 h2 {
   font-weight: bold; /* Set font weight */
+  padding-top: 30px;
 }
 
 /* Additional styling for h3 */
@@ -821,35 +743,66 @@ h3 {
   font-weight: normal; /* Set font weight */
 }
 
-
-/* Footer styles */
 .footer {
-  background-color: #e1c6d8bb;
+  background-color: #FFD9DA;
   padding: 20px;
   text-align: center;
 }
+
 .footer-heading {
-  color: #6e2c5b; /* Darker color for the footer h2 */
+  color: #1B2021;
+  margin-bottom: 20px; /* Add margin bottom for spacing */
 }
+
 .footer-icons {
-  font-size: 30px;
+  text-align: center;
+  margin-top: 20px; /* Add top margin for spacing */
 }
 
 .footer-icons a {
-  color: #d85ea8;
+  display: inline-block;
   margin: 0 10px; /* Adjust margin between icons */
   background-color: transparent; /* Set background color to transparent */
-  padding: 5px; /* Add padding to the icons */
+  padding: 10px; /* Add padding to the icons */
   border-radius: 50%; /* Make the icons circular */
-  font-size: 40px;
+  font-size: 30px;
+  color: #EA638C;
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for background and color */
 }
 
+.footer-icons a:hover {
+  background-color: #EA638C; /* Change background color on hover */
+  color: #FFD9DA; /* Change text color on hover */
+}
+
+.footer-icon {
+  animation: pulseAnimation 1.5s ease-in-out infinite;
+  cursor: pointer;
+}
+
+@keyframes pulseAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+
 #contact {
-  padding: 20px; /* Decrease padding for smaller screens */
+  background-color: #de96ac;
+  padding: 20px;
+  text-align: left;
   font-family: "Teachers", sans-serif;
-  color: purple;
-  font-size: 30px;
+  color: #30343F;
+  font-size: 24px; /* Adjusted font size */
   margin-bottom: 20px;
+  border-radius: 10px;
 }
 
 #contact h2 {
@@ -857,15 +810,18 @@ h3 {
 }
 
 #contact form {
-  max-width: 100%; /* Set max-width to 100% for responsiveness */
-  margin: 0 auto;
-  padding: 0 5px; /* Adjust padding for smaller screens */
+  max-width: 600px; /* Set max-width for the form */
+  margin: 0 auto; /* Center align the form */
+  padding: 10px; /* Adjust padding for smaller screens */
+  background-color: #ffffff; /* White background for the form */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
 }
 
 #contact label {
   display: block;
   margin-bottom: 10px;
-  font-size: 16px; /* Adjusted font size for smaller screens */
+  font-size: 14px; /* Adjusted font size */
 }
 
 #contact input[type="text"],
@@ -873,10 +829,10 @@ h3 {
 #contact textarea {
   width: calc(100% - 20px); /* Adjust input width to account for padding */
   padding: 10px;
-  font-size: 14px; /* Adjusted font size for smaller screens */
-  margin-bottom: 15px; /* Decrease margin-bottom for smaller screens */
+  font-size: 14px; /* Adjusted font size */
+  margin-bottom: 15px; /* Decrease margin-bottom */
   font-family: "Teachers", sans-serif;
-  color: #44203d;
+  color: #1B2021;
 }
 
 #contact textarea {
@@ -885,15 +841,57 @@ h3 {
 
 #contact button {
   padding: 10px 20px;
-  font-size: 16px; /* Adjusted font size for smaller screens */
-  background-color: #da7399;
+  font-size: 16px; /* Adjusted font size */
+  background-color: #89023E;
   color: #fff;
   border: none;
   cursor: pointer;
   font-family: "Teachers", sans-serif;
+  border-radius: 5px;
 }
 
 #contact button:hover {
-  background-color: #c494b6;
+  background-color: #3d2c6d;
+}
+/* Loader Styles */
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure loader is on top */
+  transition: opacity 0.3s ease; /* Smooth transition for opacity */
 }
 
+.loader-inner {
+  width: 50px; /* Adjusted to a more reasonable size */
+  height: 50px;
+  border-radius: 50%; /* Circle shape */
+  background: radial-gradient(farthest-side, #514b82 0%, #0000 100%);
+  animation: l10 1.5s infinite linear; /* Ensure continuous animation */
+}
+
+@keyframes l10 {
+  0% {
+    transform: scale(0);
+    background: radial-gradient(farthest-side, #824b79 0%, #0000 100%);
+  }
+  50% {
+    transform: scale(1);
+    background: radial-gradient(farthest-side, #f294e5 50%, #0000 100%);
+  }
+  100% {
+    transform: scale(0);
+    background: radial-gradient(farthest-side, #401938 0%, #0000 100%);
+  }
+}
+
+.loader-hidden {
+  opacity: 0; /* Fade out the loader */
+  pointer-events: none; /* Disable pointer events to allow interaction */
+}
